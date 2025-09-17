@@ -50,7 +50,7 @@ const store = MongoStore.create({
 });
 
 store.on("error", () => {
-  console.log("ERROR in MONGO SESSION STORE".err);
+  console.log("ERROR in MONGO SESSION STORE", err);
 });
 
 const sessionOptions = {
@@ -82,6 +82,10 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get("/", (req, res) => {
+  res.send("Server is running on Render!");
+});
+
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
@@ -95,6 +99,7 @@ app.use((err, req, res, next) => {
   res.status(statusCode).render("error.ejs", { message });
 });
 
-app.listen(8080, () => {
-  console.log("server is listening to port 8080");
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`server is listening to port ${PORT}`);
 });
