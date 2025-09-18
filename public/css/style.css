@@ -97,17 +97,8 @@ textarea {
 }
 
 /* CARD EFFECT */
-.card-img-overlay {
-  opacity: 0;
-}
-
-.card-img-overlay:hover {
-  opacity: 0.1;
-  background-color: white;
-}
-
 .col:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   box-shadow: -3px 10px 25px -3px black;
   transition-duration: 0.4s;
   transition-delay: 0.01s;
@@ -117,6 +108,11 @@ textarea {
 /* SHOW PAGE */
 .show-img {
   height: 30vh;
+}
+
+.ryt-p {
+  display: flex;
+  justify-content: end;
 }
 
 .btns {
@@ -133,6 +129,22 @@ textarea {
   justify-content: end;
 }
 
+.author-name {
+  font-size: small;
+}
+
+.review-info {
+  display: flex;
+}
+
+.time-info {
+  display: flexbox;
+  font-size: x-small;
+  line-height: 0.01rem;
+  margin-top: 1rem;
+  margin-left: auto;
+}
+
 /* Flash */
 .btn-close {
   box-shadow: none !important;
@@ -142,41 +154,6 @@ textarea {
 #map {
   height: 400px;
   width: 80vh;
-}
-
-/* Map Searchbox */
-#searchBox {
-  margin-bottom: 5px;
-  display: flex;
-  gap: 5px;
-  width: 36.5rem !important;
-}
-
-.map-btn {
-  background-color: #fe424d !important;
-  color: #fff !important;
-  border-radius: 25px !important;
-}
-
-.map-btn:hover {
-  color: #fe424d !important;
-  background-color: #fff !important;
-  border: 2px solid #fe424d !important;
-}
-
-.map-search {
-  flex: 1;
-  width: 36.5rem !important;
-  resize: none !important;
-  overflow: hidden !important;
-  border-radius: 25px !important;
-  padding: 0.5rem 2rem 0.5rem 2rem !important;
-  border: 1px solid rgb(0, 0, 0, 0.1) !important;
-}
-
-.map-search:hover {
-  background-color: #ebebeb !important;
-  border: none !important;
 }
 
 /* Index Filters */
@@ -227,18 +204,26 @@ textarea {
   background-color: #ebebeb;
 }
 
-/* Nav Search Bar */
+/* Search Bar */
+#searchBox {
+  margin-bottom: 5px;
+  display: flex;
+  gap: 5px;
+  width: 36.5rem !important;
+}
+
 .search-btn {
   background-color: #fe424d !important;
   color: #fff !important;
   border-radius: 25px !important;
   padding: 0 1rem 0 1rem !important;
+  border: 2.5px solid #fe424d !important;
 }
 
 .search-btn:hover {
   color: #fe424d !important;
   background-color: #fff !important;
-  border: 3px solid #fe424d !important;
+  border: 2.5px solid #fe424d !important;
 }
 
 .search-btn i {
@@ -247,20 +232,23 @@ textarea {
 }
 
 .search-inp {
-  width: 30rem !important;
+  flex: 1;
+  width: 36.5rem !important;
+  resize: none !important;
+  overflow: hidden !important;
   border-radius: 25px !important;
   padding: 0.5rem 2rem 0.5rem 2rem !important;
+  border: 1px solid rgb(0, 0, 0, 0.1) !important;
 }
 
 .search-inp:hover {
-  border: 1px solid black;
-  background-color: #ebebeb;
-  border: none;
+  background-color: #ebebeb !important;
+  border: 1px solid #ebebeb !important;
 }
 
 /* Buttons */
 .add-btn {
-  border: none !important;
+  border: 2px solid #fe424d !important;
   background-color: #fe424d !important;
   color: white !important;
 }
@@ -272,7 +260,7 @@ textarea {
 }
 
 .reset-btn {
-  border: none !important;
+  border: 2px solid #000 !important;
   background-color: #000 !important;
   color: white !important;
 }
@@ -281,4 +269,10 @@ textarea {
   border: 2px solid #000 !important;
   color: #000 !important;
   background-color: white !important;
+}
+
+.dlt-btn {
+  border: 2px solid #000 !important;
+  background-color: #000 !important;
+  color: white !important;
 }
