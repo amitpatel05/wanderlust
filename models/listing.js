@@ -29,19 +29,6 @@ const listingSchema = new Schema({
     type: String,
     trim: true,
   },
-  // category: {
-  //   type: String,
-  //   enum: [
-  //     "mountains",
-  //     "rooms",
-  //     "farm",
-  //     "arctic",
-  //     "Iconic Cities",
-  //     "castles",
-  //     "amazing pools",
-  //     "camping",
-  //   ],
-  // },
   reviews: [
     {
       type: Schema.Types.ObjectId,
@@ -51,6 +38,23 @@ const listingSchema = new Schema({
   owner: {
     type: Schema.Types.ObjectId,
     ref: "User",
+  },
+  category: {
+    type: String,
+    required: true,
+    enum: [
+      "Trending",
+      "Rooms",
+      "Iconic Cities",
+      "Mountains",
+      "Castles",
+      "Amazing Pools",
+      "Camping",
+      "Farms",
+      "Arctic",
+      "Domes",
+      "Boats",
+    ],
   },
 });
 

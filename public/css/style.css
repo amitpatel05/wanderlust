@@ -183,6 +183,8 @@ textarea {
   flex-shrink: 0; /* Prevent shrinking */
   flex: 0 0 auto; /* Prevent wrapping */
   cursor: pointer;
+  text-decoration: none;
+  color: #000;
 }
 
 .filter:hover {
@@ -345,4 +347,27 @@ textarea {
   .search-inp {
     width: 100% !important;
   }
+}
+
+/* Dark Mode */
+.dark-mode {
+  background-color: #454545 !important;
+}
+
+.dark-mode .card {
+  background-color: #454545 !important;
+}
+
+.dark {
+  background-color: none !important;
+  border: none !important;
+  border-radius: 0% !important;
+  font-size: medium !important;
+  color: #000 !important;
+}
+
+.dark:hover {
+  background-color: #ebebeb !important;
+  border-radius: 0% !important;
+  font-weight: 400 !important;
 }
