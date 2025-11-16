@@ -15,6 +15,7 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
+const Listing = require("./models/listing.js");
 
 const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
@@ -89,6 +90,24 @@ app.get("/", (req, res) => {
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
+
+app.get("/search", async (req, res) => {
+  try {
+    const query = req.query.query;
+    const results = await Listing.find({
+      $or: [
+        { title: { $regex: query, $options: "i" } },
+        { location: { $regex: query, $options: "i" } },
+        { country: { $regex: query, $options: "i" } },
+        { category: { $regex: query, $options: "i" } },
+      ],
+    });
+    res.render("listings/index", { allListings: results });
+  } catch (err) {
+    console.log("Error in search:", err);
+    res.status(500).send("Error in search");
+  }
+});
 
 app.all("/*splat", (req, res, next) => {
   next(new ExpressError(404, "Page Not Found!"));
