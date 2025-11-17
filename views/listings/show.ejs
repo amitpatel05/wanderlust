@@ -15,16 +15,20 @@
                 alt="listing_image"
               />
               <p class="show-text ryt-p">
-                ~ <i>@<%= listing.owner.username %></i>
+                ~&nbsp;<i>@<%= listing.owner.username %></i>
               </p>
               <p class="show-text">&#8226; <%= listing.description %></p>
               <p class="show-text">
-                &#8226; &#8377; <%= listing.price.toLocaleString("en-IN") %> /
-                night
+                &#8226; Price : &#8377; <%=
+                listing.price.toLocaleString("en-IN") %> / night
               </p>
-              <p class="show-text">&#8226; <%= listing.location %></p>
-              <p class="show-text">&#8226; <%= listing.country %></p>
-              <p class="show-text">&#8226; <%= listing.category %></p>
+              <p class="show-text">
+                &#8226; Location : <%= listing.location %>
+              </p>
+              <p class="show-text">&#8226; Country : <%= listing.country %></p>
+              <p class="show-text">
+                &#8226; Category : <%= listing.category %>
+              </p>
 
               <% if(currUser && listing.owner._id.equals(currUser._id)) { %>
               <div class="btns btn-outline-dark mt-3">
