@@ -48,9 +48,15 @@ textarea {
   background-color: white;
 }
 
-.fa-compass {
+/* .fa-compass {
   color: #fe424d !important;
   font-size: 2rem !important;
+} */
+
+.navbar-brand {
+  color: #fe424d !important;
+  font-size: 2rem !important;
+  font-weight: bolder;
 }
 
 .nav-link {
