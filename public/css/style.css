@@ -133,13 +133,8 @@ textarea {
   text-decoration: none;
 }
 
-.card-img-overlay {
-  opacity: 0;
-}
-
-.card-img-overlay:hover {
-  opacity: 0.2;
-  background-color: white;
+.card-text {
+  font-size: medium !important;
 }
 
 /* SHOW PAGE */
@@ -399,10 +394,6 @@ textarea {
   .filter {
     min-width: 80px;
   }
-
-  .card-text {
-    font-size: small !important;
-  }
 }
 
 @media (max-width: 992px) {
@@ -410,7 +401,7 @@ textarea {
     height: auto !important;
   }
 
-  .searchbar {
+  .searchBar {
     padding: 0.5rem !important;
   }
 
@@ -419,7 +410,12 @@ textarea {
   }
 
   .nav-item {
-    border-top: 1px solid rgb(0, 0, 0, 0.3) !important;
+    border-top: 1px solid rgb(0, 0, 0, 0.2) !important;
+  }
+
+  .nav-dark {
+    width: 100%;
+    text-align: left !important;
   }
 }
 
@@ -456,6 +452,11 @@ textarea {
   .card-position {
     margin-left: 0.2rem !important;
   }
+
+  .listing-card {
+    border-bottom: 1px solid rgb(0, 0, 0, 0.5) !important;
+    padding-bottom: 1rem;
+  }
 }
 
 @media (max-width: 576px) {
@@ -490,7 +491,7 @@ textarea {
     font-size: small !important;
   }
 
-  .card-text {
+  .review-text {
     font-size: x-small !important;
   }
 
@@ -501,5 +502,9 @@ textarea {
   .time-info {
     font-size: 0.35rem;
     font-weight: 600;
+  }
+
+  .card-text {
+    font-size: medium !important;
   }
 }

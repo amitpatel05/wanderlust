@@ -25,15 +25,13 @@
           <a class="nav-link" href="/listings">&nbsp;&nbsp;Explore</a>
         </li>
         <li class="nav-item">
-          <button id="themeBtn" class="btn dark nav-link">
-            &nbsp;&nbsp;Dark 🌙
-          </button>
+          <a class="nav-link" href="/listings/new">&nbsp;&nbsp;Add New</a>
         </li>
       </ul>
 
       <!-- SEARCH BAR -->
       <form
-        class="d-flex me-md-3 mt-2 mt-md-0 nav-item searchbar"
+        class="d-flex me-md-3 mt-2 mt-md-0 nav-item searchBar"
         role="search"
         action="/search"
         method="GET"
@@ -52,9 +50,11 @@
       </form>
 
       <!-- RIGHT ITEMS -->
-      <ul class="navbar-nav ms-md-3 mb-2 mb-md-0">
+      <ul class="navbar-nav mb-2 mb-md-0">
         <li class="nav-item">
-          <a class="nav-link" href="/listings/new">Add New</a>
+          <button id="themeBtn" class="btn dark nav-link nav-dark">
+            &nbsp;&nbsp;Dark 🌙
+          </button>
         </li>
 
         <% if (!currUser) { %>
@@ -78,7 +78,7 @@
             role="button"
             data-bs-toggle="dropdown"
           >
-            <%= currUser.username %>
+            &nbsp;&nbsp;<%= currUser.username %>
           </a>
 
           <ul class="dropdown-menu dropdown-menu-end">
