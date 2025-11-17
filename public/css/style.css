@@ -309,6 +309,7 @@ textarea {
 
 .search-inp {
   flex: 1;
+  text-align: center;
   width: 36.5rem !important;
   resize: none !important;
   overflow: hidden !important;
@@ -377,24 +378,18 @@ textarea {
 /* MEDIA QUERIES */
 
 @media (max-width: 1200px) {
-  .searchBox {
+  #searchBox {
     width: auto !important;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
+    align-items: stretch !important;
   }
 
   .d-flex {
     width: auto !important;
     display: flex;
     flex-wrap: wrap;
-  }
-
-  #searchBox {
-    width: auto !important;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: stretch;
   }
 
   .search-inp {
@@ -410,22 +405,35 @@ textarea {
   }
 }
 
-@media (max-width: 768px) {
-  #map {
-    height: 300px;
+@media (max-width: 992px) {
+  .navbar {
+    height: auto !important;
   }
 
-  .navbar {
-    height: auto;
+  .searchbar {
+    padding: 0.5rem !important;
+  }
+
+  .search-inp {
+    margin-bottom: 0.3rem;
   }
 
   .nav-item {
     border-top: 1px solid rgb(0, 0, 0, 0.3) !important;
   }
+}
 
-  .d-flex {
-    width: 6.5rem !important;
-    display: flex;
+@media (max-width: 768px) {
+  #map {
+    height: 300px;
+  }
+
+  .search-inp {
+    width: 100% !important;
+  }
+
+  .search-btn {
+    width: 100% !important;
   }
 
   .tax-toggle {
@@ -451,6 +459,14 @@ textarea {
 }
 
 @media (max-width: 576px) {
+  .search-inp {
+    width: 100% !important;
+  }
+
+  .search-btn {
+    width: 100% !important;
+  }
+
   .filter {
     min-width: 20px;
   }
