@@ -53,10 +53,11 @@ textarea {
   font-size: 2rem !important;
 } */
 
-.navbar-brand {
+.navbar-text {
   color: #fe424d !important;
-  font-size: 2rem !important;
+  font-size: 1.7rem !important;
   font-weight: bolder;
+  margin-right: 1.7rem;
 }
 
 .nav-link {
