@@ -5,45 +5,47 @@
       <div class="card shadow-lg border-0 rounded-4">
         <div class="card-body">
           <div class="card col-8 show-card listing-card">
-            <div class="col-8 mt-4 mb-2">
-              <h3>&#9733; <%= listing.title %></h3>
-            </div>
-            <img
-              src="<%= listing.image.url || listing.image %>"
-              class="card-img-top show-img"
-              alt="listing_image"
-            />
-            <p class="card-text ryt-p">
-              ~ <i>@<%= listing.owner.username %></i>
-            </p>
-            <p class="card-text">&#8226; <%= listing.description %></p>
-            <p class="card-text">
-              &#8226; &#8377; <%= listing.price.toLocaleString("en-IN") %> /
-              night
-            </p>
-            <p class="card-text">&#8226; <%= listing.location %></p>
-            <p class="card-text">&#8226; <%= listing.country %></p>
-            <p class="card-text">&#8226; <%= listing.category %></p>
+            <div>
+              <div class="col-8 mt-4 mb-2">
+                <h3 class="show-heading">&#9733; <%= listing.title %></h3>
+              </div>
+              <img
+                src="<%= listing.image.url || listing.image %>"
+                class="card-img-top show-img"
+                alt="listing_image"
+              />
+              <p class="show-text ryt-p">
+                ~ <i>@<%= listing.owner.username %></i>
+              </p>
+              <p class="show-text">&#8226; <%= listing.description %></p>
+              <p class="show-text">
+                &#8226; &#8377; <%= listing.price.toLocaleString("en-IN") %> /
+                night
+              </p>
+              <p class="show-text">&#8226; <%= listing.location %></p>
+              <p class="show-text">&#8226; <%= listing.country %></p>
+              <p class="show-text">&#8226; <%= listing.category %></p>
 
-            <% if(currUser && listing.owner._id.equals(currUser._id)) { %>
-            <div class="btns btn-outline-dark mt-3">
-              <a
-                href="/listings/<%= listing._id %>/edit"
-                class="btn add-btn edit-btn"
-                >Edit</a
-              >
-              <form
-                method="POST"
-                action="/listings/<%=listing._id%>?_method=DELETE"
-              >
-                <button class="btn offset-3 dlt-btn">Delete</button>
-              </form>
+              <% if(currUser && listing.owner._id.equals(currUser._id)) { %>
+              <div class="btns btn-outline-dark mt-3">
+                <a
+                  href="/listings/<%= listing._id %>/edit"
+                  class="btn add-btn edit-btn"
+                  >Edit</a
+                >
+                <form
+                  method="POST"
+                  action="/listings/<%=listing._id%>?_method=DELETE"
+                >
+                  <button class="btn offset-3 dlt-btn">Delete</button>
+                </form>
+              </div>
             </div>
 
             <div class="col-12 mb-3">
               <% } %> <% if(currUser) { %>
               <hr />
-              <h4>Leave a Review</h4>
+              <h4 class="show-heading">Leave a Review</h4>
               <form
                 action="/listings/<%=listing._id%>/reviews"
                 method="POST"
@@ -51,7 +53,9 @@
                 class="needs-validation"
               >
                 <div class="mb-3 mt-3">
-                  <label for="rating" class="form-label">Rating</label>
+                  <label for="rating" class="form-label show-text"
+                    >Rating</label
+                  >
                   <fieldset class="starability-slot">
                     <input
                       type="radio"
@@ -100,7 +104,9 @@
                   </fieldset>
                 </div>
                 <div class="mb-3 mt-3">
-                  <label for="comment" class="form-label">Comments</label>
+                  <label for="comment" class="form-label show-text"
+                    >Comments</label
+                  >
                   <textarea
                     name="review[comment]"
                     id="comment"
@@ -119,6 +125,7 @@
               <hr />
 
               <% } %> <% if (listing.reviews.length > 0) { %>
+              <hr />
               <div class="row">
                 <p><b>All Reviews</b></p>
                 <% for(review of listing.reviews) { %>
@@ -131,10 +138,10 @@
                     </p>
                   </h5>
                   <p
-                    class="starability-result review-text"
+                    class="starability-result show-text"
                     data-rating="<%= review.rating %>"
                   ></p>
-                  <p class="review-text"><%= review.comment %></p>
+                  <p class="show-text"><%= review.comment %></p>
                   <form
                     class="mb-3"
                     method="POST"
@@ -153,12 +160,12 @@
             </div>
             <hr />
 
-            <div class="col-12 mb-3">
-              <h3 class="mb-3">Where you'll be</h3>
+            <div>
+              <h3 class="mb-3 show-heading">Where you'll be</h3>
               <div id="searchBox">
                 <input
                   type="text"
-                  class="search-inp"
+                  class="search-inp map-inp"
                   id="address"
                   placeholder="Search Location"
                 />
