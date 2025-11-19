@@ -48,16 +48,13 @@ textarea {
   background-color: white;
 }
 
-/* .fa-compass {
-  color: #fe424d !important;
-  font-size: 2rem !important;
-} */
-
 .navbar-text {
   color: #fe424d !important;
   font-size: 1.7rem !important;
   font-weight: bolder;
-  margin-right: 1.7rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  cursor: pointer;
 }
 
 .nav-link {
@@ -406,6 +403,10 @@ textarea {
 @media (max-width: 992px) {
   .navbar {
     height: auto !important;
+  }
+
+  .navbar-text {
+    margin-left: 0.3rem;
   }
 
   .searchBar {
